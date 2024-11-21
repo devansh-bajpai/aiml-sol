@@ -21,3 +21,9 @@ for x in range(1, 11):
     print(n, "x", x, "=", n*x)
 
 
+# Solution 3
+myStr = input()
+if myStr == myStr[::-1]:
+    print("Palindrome")
+else:
+    print("Not Palindrome")
