@@ -1,14 +1,5 @@
-with open('sampleText.txt', 'r+') as fobj:
-    lines = fobj.readlines()
-    i = 0
+import cv2
 
-    for line in lines:
-        line = line.replace('java', 'python')
-        lines[i] = line
-        i += 1
-
-    
-
-with open('sampleText.txt', 'w') as fobj:
-    fobj.writelines(lines)
-    
+myImg = cv2.imread('rose.jpg')
+cv2.imshow("original image", myImg)
+cv2.waitKey(0)
