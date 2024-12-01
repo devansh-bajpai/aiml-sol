@@ -1,9 +1,11 @@
 # # Solution 4:
 
-# # Reading CSV:
+# Reading CSV:
 # import csv
 # with open('names.csv', 'r') as fobj:
 #     csv_reader = csv.reader(fobj)
+
+#     next(csv_reader) # To skip the header
 
 #     for line in csv_reader:
 #         print(line)
