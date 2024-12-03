@@ -1,11 +1,23 @@
 import pandas as pd
 import numpy as np
 
-myDict = {
-    "name" : ["aman", "shradha", "harry", "mukesh"],
-    "branch" : ["cse", "ece", "ee", "ee"],
-    "age" : [22, 24, 30, 56]
-}
+# Load CSV File
+df = pd.read_csv("titanic.csv")
 
-df = pd.DataFrame(myDict)
-df.to_csv("mydf.csv")
+
+# Find missing values in each column
+print(df.isna().sum())
+
+
+# Drop columns from Data
+print(df.drop("PassengerId", axis=1)) # To drop column PassengerId
+print(df.drop(2, axis=0)) # To drop row 2
+
+# Replace all 'male' to 1 and 'female' to 0:
+df["Sex"] = df["Sex"].map({'male': 1, "female": 0})
+df.replace({"Sex": 'male'}, 1, inplace=True) # Alternate Solution
+df.replace({"Sex": 'female'}, 0, inplace=True)
+
+
+# Fill missing values in age column
+df["Age"].fillna("No Age", inplace=True)  
